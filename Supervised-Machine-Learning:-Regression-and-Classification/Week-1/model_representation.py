@@ -85,3 +85,17 @@ plt.plot(x_train, tmp_f_wb, c='b', label='Our prediction')
     
 plot_graph(x_train, y_train, 'Actual Values')
 
+
+'''Now that we have a model, we can use it to make our original prediction. Let's predict the price of a house with 1200 sqft. Since the units of  𝑥 are in 1000's of sqft, 𝑥 is 1.2.'''
+
+print(f"Predicting the price of a house with 1200 sqft. Since the units of  𝑥 are in 1000's of sqft, 𝑥 is 1.2.")
+w = 200
+b = 100
+x_i = 1.2
+print(f"w: {w}")
+print(f"b: {b}")
+
+cost_1200sqft = w * x_i + b
+print(f"${cost_1200sqft:.0f} thousand dollars")
+
+
