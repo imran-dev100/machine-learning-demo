@@ -33,3 +33,19 @@ def compute_cost(x, y, w, b):
     return total_cost
 
 plt_intuition(x_train,y_train)
+
+
+## LARGER DATA SETS ##
+
+x_train = np.array([1.0, 1.7, 2.0, 2.5, 3.0, 3.2])
+y_train = np.array([250, 300, 480,  430,   630, 730,])
+plt.close('all')
+
+fig, ax, dyn_items = plt_stationary(x_train, y_train)
+updater = plt_update_onclick(fig, ax, x_train, y_train, dyn_items)
+
+#Convex Cost surface
+print(f"Convex Cost surface")
+
+soup_bowl()
+
