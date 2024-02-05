@@ -20,10 +20,11 @@ m = x_train.shape[0]
 print(f"Number of training examples is: {m}")
 
 # iterate each training example individually
+
+print(f"Iterating each training examples")
 for i in range(m):
     x_i = x_train[i]
     y_i = y_train[i]
-
     print(f"(x^({i}), y^({i})) = ({x_i}, {y_i})")
 
 # plotting the data points of training set in graph
