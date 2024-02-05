@@ -21,7 +21,7 @@ print(f"Number of training examples is: {m}")
 
 # iterate each training example individually
 
-print(f"Iterating each training examples")
+print(f"Iterating each training example")
 for i in range(m):
     x_i = x_train[i]
     y_i = y_train[i]
