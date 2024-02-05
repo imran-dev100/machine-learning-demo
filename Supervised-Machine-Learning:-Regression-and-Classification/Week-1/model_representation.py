@@ -43,7 +43,12 @@ plt.ylabel("Price (in 1000s of USD)")
 plt.show()
 
 
+## MODEL FUNCTION ##
 
+print(f"Defining the model function with parameters w and b with formula f = wx +b")
 
-
+w = 100
+b = 100
+print(f"w: {w}")
+print(f"b: {b}")
 
