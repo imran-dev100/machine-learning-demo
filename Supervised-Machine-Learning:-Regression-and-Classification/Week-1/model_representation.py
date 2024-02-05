@@ -27,20 +27,24 @@ for i in range(m):
     y_i = y_train[i]
     print(f"(x^({i}), y^({i})) = ({x_i}, {y_i})")
 
-# plotting the data points of training set in graph
-plt.scatter(x_train, y_train, marker = 'x', c = 'r')
 
-# setting the title of graph
-plt.title("Housing prices")
+def plot_graph(x_train, y_train, label):
+    # plotting the data points of training set in graph
+    plt.scatter(x_train, y_train, marker = 'x', c = 'r', label = label)
 
-# setting the label of x-axis
-plt.xlabel("Size (in 1000 sq. ft.)")
+    # setting the title of graph
+    plt.title("Housing prices")
 
-# setting the label of y-axis
-plt.ylabel("Price (in 1000s of USD)")
+    # setting the label of x-axis
+    plt.xlabel("Size (in 1000 sq. ft.)")
 
-# showing the plot in new tab
-plt.show()
+    # setting the label of y-axis
+    plt.ylabel("Price (in 1000s of USD)")
+
+    # showing the plot in new tab
+    plt.show()
+
+plot_graph(x_train, y_train, '')
 
 
 ## MODEL FUNCTION ##
@@ -51,4 +55,33 @@ w = 100
 b = 100
 print(f"w: {w}")
 print(f"b: {b}")
+
+# Calculating or computing model function for given training model
+
+def compute_model_output(x, w, b):
+    """
+    Computes the prediction of a linear model
+    Args:
+      x (ndarray (m,)): Data, m examples 
+      w,b (scalar)    : model parameters  
+    Returns
+      f_wb (ndarray (m,)): model prediction
+    """
+    # Length or size of the training model
+    m = x.shape[0]
+
+    # initialing an array with zeros on the same size to compute each input's model function
+    f_wb = np.zeros(m)
+    for i in range(m):
+        # f = wx + b
+        f_wb[i] = w * x[i] + b
+
+    return f_wb
+
+tmp_f_wb = compute_model_output(x_train, w, b)
+
+# plotting a prediction graph
+plt.plot(x_train, tmp_f_wb, c='b', label='Our prediction')
+    
+plot_graph(x_train, y_train, 'Actual Values')
 
