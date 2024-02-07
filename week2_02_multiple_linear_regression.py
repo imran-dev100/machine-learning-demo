@@ -21,3 +21,63 @@ print(f"w_init shape: {w_init.shape}, w_init type: {type(w_init)}")
 
 print(f"b_init: {b_init}, b_init type: {type(b_init)}")
 
+
+print(f"Prediction using for loop")
+
+def predict_single_loop(x, w, b):
+    '''
+    single predict using linear regression
+    
+    Args:
+      x (ndarray): Shape (n,) example with multiple features
+      w (ndarray): Shape (n,) model parameters    
+      b (scalar):  model parameter     
+      
+    Returns:
+      p (scalar):  prediction
+    '''
+
+    n = x.shape[0]
+    p = 0
+    for i in range(n):
+        p_i = x[i] * w[i]
+        p = p + p_i
+    p = p + b
+    return p
+
+print(f"\nPredicting for first array in X using for loop:\n")
+
+x_vec = X_train[0,:]
+
+print(f"x_vec shape {x_vec.shape},\n x_vec value:{x_vec}")
+
+f_wb = predict_single_loop(x_vec, w_init, b_init)
+print(f"f_wb shape {f_wb.shape}, prediction: {f_wb}")
+
+
+print(f"\nPredict using vector\n")
+
+def predict(x, w, b): 
+    """
+    single predict using linear regression
+    Args:
+      x (ndarray): Shape (n,) example with multiple features
+      w (ndarray): Shape (n,) model parameters   
+      b (scalar):             model parameter 
+      
+    Returns:
+      p (scalar):  prediction
+    """
+    p = np.dot(x, w) + b     
+    return p    
+
+# get a row from our training data
+x_vec = X_train[0,:]
+print(f"x_vec shape {x_vec.shape}, x_vec value: {x_vec}")
+
+# make a prediction
+f_wb = predict(x_vec,w_init, b_init)
+print(f"f_wb shape {f_wb.shape}, prediction: {f_wb}")
+    
+
+
