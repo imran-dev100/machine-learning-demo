@@ -8,9 +8,9 @@ X_train = np.array([[2104, 5, 1, 45], [1416, 3, 2, 40], [852, 2, 1, 35]])
 y_train = np.array([460, 232, 178])
 
 # data is stored in numpy array/matrix
-print(f"X Shape: {X_train.shape}, X Type:{type(X_train)})")
+print(f"X Shape: {X_train.shape},\n X Type:{type(X_train)})\n")
 print(X_train)
-print(f"\ny Shape: {y_train.shape}, y Type:{type(y_train)})")
+print(f"\ny Shape: {y_train.shape},\n y Type:{type(y_train)})\n")
 print(y_train)
 
 print(f"\nParameter vector w,b\n")
