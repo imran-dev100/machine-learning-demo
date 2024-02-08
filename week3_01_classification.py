@@ -1,7 +1,6 @@
 import numpy as np
-%matplotlib widget
 import matplotlib.pyplot as plt
-from lab_utils_common import dlc, plot_data
+from lab_utils_common_classification import dlc, plot_data
 from plt_one_addpt_onclick import plt_one_addpt_onclick
 plt.style.use('./deeplearning.mplstyle')
 
@@ -38,4 +37,7 @@ plt.tight_layout()
 plt.show()
 
 
-
+w_in = np.zeros((1))
+b_in = 0
+plt.close('all') 
+addpt = plt_one_addpt_onclick( x_train,y_train, w_in, b_in, logistic=False)
